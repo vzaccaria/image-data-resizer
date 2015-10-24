@@ -32,6 +32,7 @@ var _module = function () {
         }
     }
 
+    /* computes the new image dimension from old image dimension and canvas dimension */
     function computePosAndSizeNoFit(imageDimensions, canvasDimensions) {
         var cw = canvasDimensions.cw;
         var ch = canvasDimensions.ch;
@@ -58,6 +59,7 @@ var _module = function () {
         };
     }
 
+    /* computes new image dimension and padding from old image and canvas dimension */
     function computeAllPosAndSizeNoFit(imageDimensions, canvasDimensions) {
         var _computePosAndSizeNoFit = computePosAndSizeNoFit(imageDimensions, canvasDimensions);
 

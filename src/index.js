@@ -30,6 +30,7 @@ var _module = () => {
         }
     }
 
+    /* computes the new image dimension from old image dimension and canvas dimension */
     function computePosAndSizeNoFit(imageDimensions, canvasDimensions) {
         let {
             cw, ch
@@ -55,6 +56,7 @@ var _module = () => {
         };
     }
 
+    /* computes new image dimension and padding from old image and canvas dimension */
     function computeAllPosAndSizeNoFit(imageDimensions, canvasDimensions) {
         let { nw, nh } = computePosAndSizeNoFit(imageDimensions, canvasDimensions);
         let { iw, ih } = imageDimensions;
