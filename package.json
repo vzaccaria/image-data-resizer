@@ -1,6 +1,6 @@
 {
   "name": "image-data-resizer",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A one-line-ish module to resize canvas images keeping aspect ratio",
   "main": "index.js",
   "scripts": {
