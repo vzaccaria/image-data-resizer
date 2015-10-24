@@ -54,4 +54,41 @@ describe('#module', () => {
             nw: 100
         });
     })
+
+    it('should compute horizontal padding of tall figures', () => {
+        var cd = {
+            cw: 100,
+            ch: 100
+        };
+
+        mod.computeAllPosAndSizeNoFit({
+            ih: 200,
+            iw: 100
+        }, cd).should.be.deep.equal({
+            dx: 25,
+            dy: 0,
+            scaleh: 0.5,
+            scalew: 0.5,
+            nw: 50,
+            nh: 100
+        });
+    })
+    it('should compute vertical padding of wide figures', () => {
+        var cd = {
+            cw: 100,
+            ch: 100
+        };
+
+        mod.computeAllPosAndSizeNoFit({
+            iw: 400,
+            ih: 100
+        }, cd).should.be.deep.equal({
+            dx: 0,
+            dy: 37.5,
+            scaleh: 0.25,
+            scalew: 0.25,
+            nw: 100,
+            nh: 25
+        });
+    })
 })

@@ -58,8 +58,27 @@ var _module = function () {
         };
     }
 
+    function computeAllPosAndSizeNoFit(imageDimensions, canvasDimensions) {
+        var _computePosAndSizeNoFit = computePosAndSizeNoFit(imageDimensions, canvasDimensions);
+
+        var nw = _computePosAndSizeNoFit.nw;
+        var nh = _computePosAndSizeNoFit.nh;
+        var iw = imageDimensions.iw;
+        var ih = imageDimensions.ih;
+        var cw = canvasDimensions.cw;
+        var ch = canvasDimensions.ch;
+
+        var scalew = nw / iw;
+        var scaleh = nh / ih;
+
+        var dx = (cw - nw) / 2;
+        var dy = (ch - nh) / 2;
+
+        return { nw: nw, nh: nh, scalew: scalew, scaleh: scaleh, dx: dx, dy: dy };
+    }
+
     return {
-        computePosAndSizeNoFit: computePosAndSizeNoFit
+        computePosAndSizeNoFit: computePosAndSizeNoFit, computeAllPosAndSizeNoFit: computeAllPosAndSizeNoFit
     };
 };
 
